@@ -8,6 +8,18 @@ use App\Models\User;
 use Exception;
 use Facade\FlareClient\View;
 
+class Test{
+    public $id;
+    public $name;
+    public $email;
+    public $tag;
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+}
+
 class UserController extends Controller
 {
     /**
@@ -17,11 +29,18 @@ class UserController extends Controller
      */
     public function index()
     {
+        $teste = new Test();
+        $teste->id = 1;
+        $teste->name = "Thiago Ferreira";
+        $teste->email = "thiago@thiagowebdev.com.br";
+        $teste->tag = "cliente";
+        
         $receivers = [
-            [
-                "teste" => "vrau",
-                "teste2" => "asd"
-            ]
+            $teste,
+            $teste,
+            $teste,
+            $teste,
+            $teste,
         ];
         return View('Users.index', ['receivers' => $receivers]);
     }

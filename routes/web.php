@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Receiver\ReceiverController;
+
 
 require __DIR__.'/auth.php';
 /*
@@ -32,4 +34,14 @@ Route::group(['prefix' => 'users'], function () {
     Route::get('/edit/{id}', [UserController::class, 'edit'])->name('users.edit'); //Mostra o form de edição de usuário
     Route::put('/{id}', [UserController::class, 'update'])->name('users.update'); // Executa a atualização do registro
     Route::delete('/delete/{id}', [UserController::class, 'destroy'])->name('users.destroy'); //Deleta o registro
+});
+
+Route::group(['middlewares'=> 'auth', 'prefix' => 'receivers'], function () {
+    Route::get('/', [ReceiverController::class, 'index'])->name('receivers.index'); //Mostra todos os usuários cadastrados
+    Route::get('/create', [ReceiverController::class, 'create'])->name('receivers.create'); //Mostra o form de cadastro de usuário
+    Route::post('/', [ReceiverController::class, 'store'])->name('receivers.store'); //Executa a registro do novo usuário
+    Route::get('/{id}', [ReceiverController::class, 'show'])->name('receivers.show'); // Mostra um usuário específico
+    Route::get('/edit/{id}', [ReceiverController::class, 'edit'])->name('receivers.edit'); //Mostra o form de edição de usuário
+    Route::put('/{id}', [ReceiverController::class, 'update'])->name('receivers.update'); // Executa a atualização do registro
+    Route::delete('/delete/{id}', [ReceiverController::class, 'destroy'])->name('receivers.destroy'); //Deleta o registro
 });
