@@ -83,6 +83,7 @@ class ReceiverController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $receiver = Receiver::find($id);
+        $receiver::delete();
     }
 }
