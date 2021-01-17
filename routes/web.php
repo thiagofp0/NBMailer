@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Receiver\ReceiverController;
+use App\Http\Controllers\Template\TemplateController;
 
 
 require __DIR__.'/auth.php';
@@ -44,4 +45,14 @@ Route::group(['middlewares'=> 'auth', 'prefix' => 'receivers'], function () {
     Route::get('/edit/{id}', [ReceiverController::class, 'edit'])->name('receivers.edit'); //Mostra o form de edição de usuário
     Route::put('/{id}', [ReceiverController::class, 'update'])->name('receivers.update'); // Executa a atualização do registro
     Route::delete('/delete/{id}', [ReceiverController::class, 'destroy'])->name('receivers.destroy'); //Deleta o registro
+});
+
+Route::group(['middlewares'=> 'auth', 'prefix' => 'templates'], function () {
+    Route::get('/', [TemplateController::class, 'index'])->name('templates.index'); //Mostra todos os usuários cadastrados
+    Route::get('/create', [TemplateController::class, 'create'])->name('templates.create'); //Mostra o form de cadastro de usuário
+    Route::post('/', [TemplateController::class, 'store'])->name('templates.store'); //Executa a registro do novo usuário
+    Route::get('/{id}', [TemplateController::class, 'show'])->name('templates.show'); // Mostra um usuário específico
+    Route::get('/edit/{id}', [TemplateController::class, 'edit'])->name('templates.edit'); //Mostra o form de edição de usuário
+    Route::put('/{id}', [TemplateController::class, 'update'])->name('templates.update'); // Executa a atualização do registro
+    Route::delete('/delete/{id}', [TemplateController::class, 'destroy'])->name('templates.destroy'); //Deleta o registro
 });

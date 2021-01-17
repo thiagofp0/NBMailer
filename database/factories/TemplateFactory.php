@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Receiver;
+use App\Models\Template;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ReceiverFactory extends Factory
+class TemplateFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Receiver::class;
+    protected $model = Template::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,10 @@ class ReceiverFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail,
-            'tag' => $this->faker->word(),
-            'lastSubmissionTo' => $this->faker->dateTime()
+            'title' => $this->faker->sentence(3, true),
+            'filename' => $this->faker->slug(),
+            'type' => 'html',
+            'lastSubmission' => $this->faker->dateTime()
         ];
     }
 }

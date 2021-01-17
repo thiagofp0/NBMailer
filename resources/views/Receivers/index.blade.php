@@ -3,14 +3,14 @@
         <h1 id="hello">Olá, No Bugger!</h1>
         <section class="recipientsPageContent">
             <div class="buttonArea">
-                <a href="/recipients/new">
+                <a href="{{ route('receivers.create') }}">
                     <div class="recipientsActionButton">
                         <h6 class="actionButtonText">Novo Endereço</h6>
                     </div>
                 </a>
             </div>
             <div class="recipients">
-                @foreach ($receivers as $item)
+                @foreach ($receivers as $item) 
                     <div class="recipient">
                         <h6 class="recipientName">{{ $item->name }}</h6>
                         <h6 class="recipientEmail">{{$item->email}}</h6>

@@ -1,0 +1,1 @@
+<h1>Index Templates</h1>

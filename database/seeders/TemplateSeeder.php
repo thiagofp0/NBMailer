@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Receiver;
+use App\Models\Template;
 
-class ReceiverSeeder extends Seeder
+class TemplateSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class ReceiverSeeder extends Seeder
      */
     public function run()
     {
-        Receiver::factory()->count(50)->create();
+        Template::factory()->count(50)->create();
     }
 }

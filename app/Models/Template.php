@@ -2,28 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Template extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'title',
-        'path',
+        'filename',
         'type',
         'lastSubmission'
     ];
-
-    protected $attributes = [
-        'accessLevel' => 'manager',
-    ];
     
     protected $primaryKey = 'id';
-    protected $dateFormat = 'DD/MM/YY';
     
-    public function __construct()
+    /* public function __construct()
     {
-        $this->path = '/storage/templates/'. $this->title . '.' . $this->type;
-        $this->lastSubmission = date('d/m/Y H:i');
-    }
+        $this->lastSubmission = date('d-m-Y H:i');
+    } */
 
 }

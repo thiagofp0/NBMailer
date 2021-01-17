@@ -18,7 +18,7 @@ class CreateReceiversTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('tag');
-            $table->date('lastSubmissionTo');
+            $table->dateTime('lastSubmissionTo');
             $table->timestamps();
         });
     }
