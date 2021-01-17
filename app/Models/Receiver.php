@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Receiver extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'email',
@@ -14,5 +17,5 @@ class Receiver extends Model
     ];
 
     protected $primaryKey = 'id';
-    protected $dateFormat = 'DD/MM/YY';
+
 }

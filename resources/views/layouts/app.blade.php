@@ -11,7 +11,7 @@
             <a href="/"><img src="{{ asset("/assets/img/logo.png") }}" alt="logo" id="logo"></a>
             <div class="pages">
                 <a href="{{ route("dashboard") }}" class="page" id="fristPage">Templates</a>
-                <<a href="{{ route("receivers.index") }}" class="page" id="page">Endereços</a>
+                <a href="{{ route("receivers.index") }}" class="page" id="page">Endereços</a>
                 <a href="{{ route("logout") }}" class="page">Logout</a>
             </div>
         </nav>
@@ -22,6 +22,5 @@
             <img src="{{ asset("/assets/img/pwd.png") }}" alt="" id="logoNB">
             <h6 id="credits">Desenvolvido por Thiago Ferreira</h6>
         </footer>
-
     </body>
 </html>

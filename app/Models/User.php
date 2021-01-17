@@ -48,5 +48,4 @@ class User extends Authenticatable
     ];
 
     protected $primaryKey = 'id';
-    protected $dateFormat = 'DD/MM/YY';
 }

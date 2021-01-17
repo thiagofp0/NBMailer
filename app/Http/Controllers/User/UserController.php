@@ -42,7 +42,7 @@ class UserController extends Controller
             $teste,
             $teste,
         ];
-        return View('Users.index', ['receivers' => $receivers]);
+        return View('Users.index');
     }
 
     /**

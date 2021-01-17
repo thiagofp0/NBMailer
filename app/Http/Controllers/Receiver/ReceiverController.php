@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Receiver;
 use App\Http\Controllers\Controller;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use App\Models\Receiver;
 
 class ReceiverController extends Controller
 {
@@ -15,7 +16,8 @@ class ReceiverController extends Controller
      */
     public function index()
     {
-        return View("Receivers.index");
+        $receivers = Receiver::all();
+        return View("Receivers.index", ['receivers' => $receivers]);
     }
 
     /**
