@@ -8,12 +8,19 @@
     </head>
     <body>
         <nav id="menu">
-            <a href="/"><img src="{{ asset("/assets/img/logo.png") }}" alt="logo" id="logo"></a>
-            <div class="pages">
-                <a href="{{ route("templates.index") }}" class="page" id="fristPage">Templates</a>
-                <a href="{{ route("receivers.index") }}" class="page" id="page">Endereços</a>
-                <a href="{{ route("logout") }}" class="page">Logout</a>
+            <div id="logoDiv">
+                <a href="{{ route('templates.index') }}"><img src="{{ asset("/assets/img/logo.png") }}" alt="logo" id="logo"></a>
             </div>
+            <ul>
+                <li><a href="{{ route('templates.index') }}">Templates</a></li>
+                <li><a href="{{ route('receivers.index') }}">Endereços</a></li>
+                <li><a href="#">Opções</a>
+                    <ul>
+                        <li><a href="#">Configurações</a></li>
+                        <li><a href="{{ route('logout') }}">Logout</a></li>
+                    </ul>
+                </li>       
+            </ul>
         </nav>
         <main>
             {{ $content }}

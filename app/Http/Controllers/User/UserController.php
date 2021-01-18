@@ -28,20 +28,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $teste = new Test();
-        $teste->id = 1;
-        $teste->name = "Thiago Ferreira";
-        $teste->email = "thiago@thiagowebdev.com.br";
-        $teste->tag = "cliente";
-        
-        $receivers = [
-            $teste,
-            $teste,
-            $teste,
-            $teste,
-            $teste,
-        ];
+    {   //Dentro da view de configurações deve haver um botão que redireciona para a página de usuários
         return View('Users.index');
     }
 

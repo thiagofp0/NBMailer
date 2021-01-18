@@ -1,6 +1,8 @@
 <x-app-layout>
     <x-slot name="content">
-        {{-- <h1 id="hello">Olá, No Bugger!</h1> --}}
+        @if (Auth::user())
+            <h1 id="hello">Olá, {{ Auth::user()->name }}</h1>
+        @endif
         <section class="recipientsPageContent">
             <div class="buttonArea">
                 <a href="{{ route('receivers.create') }}">
