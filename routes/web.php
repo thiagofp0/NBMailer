@@ -23,8 +23,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    //return view('dashboard');
+    return redirect(route('templates.index'));
+})->name('dashboard');/* ->middleware(['auth']) */
 
 
 Route::group(['prefix' => 'users'], function () {
